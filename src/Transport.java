@@ -5,6 +5,8 @@ public abstract class Transport<D extends Driver> implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
+    private TransportTypes type;
+
 
     public Transport(String brand, String model, double engineVolume, D driver) {
         setBrand(brand);
@@ -17,7 +19,7 @@ public abstract class Transport<D extends Driver> implements Competing {
 
     public abstract void stopMoving();
 
-
+    public abstract void printType();
 
     public String getBrand() {
         return brand;
@@ -68,7 +70,13 @@ public abstract class Transport<D extends Driver> implements Competing {
             this.driver = driver;
         }
     }
+    public TransportTypes getType() {
+        return type;
+    }
 
+    public void setType(TransportTypes type) {
+        this.type = type;
+    }
     @Override
     public String toString() {
         return "Brand: " + getBrand() + "\n" +

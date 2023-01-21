@@ -28,9 +28,18 @@ public class Car extends Transport<DriverB> {
 
     public Car(String brand, String model, double engineVolume, DriverB driver) {
         super(brand, model, engineVolume, driver);
+        setType(TransportTypes.CAR);
     }
 
-
+    @Override
+    public void printType() {
+        if (Type == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getType() + " " + Type);
+            System.out.println("Легковой автомобиль: " + Type);
+        }
+    }
 
     @Override
     public void startMoving() {

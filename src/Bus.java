@@ -34,9 +34,17 @@ public class Bus extends Transport<DriverD> {
 
     public Bus(String brand, String model, double engineVolume, DriverD driver) {
         super(brand, model, engineVolume, driver);
+        setType(TransportTypes.BUS);
     }
 
-
+    @Override
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Автобус: " + capacity);
+        }
+    }
 
     @Override
     public void startMoving() {

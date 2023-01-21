@@ -29,9 +29,18 @@ public class Truck extends Transport<DriverC> {
 
     public Truck(String brand, String model, double engineVolume, DriverC driver) {
         super(brand, model, engineVolume, driver);
+        setType(TransportTypes.TRUCK);
     }
 
-
+    @Override
+    public void printType() {
+        if (carrying == null){
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getType() + " " + carrying);
+            System.out.println("Грузовой автомобиль: " + carrying);
+        }
+    }
 
     public Carrying getCarrying() {
         return carrying;

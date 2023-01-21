@@ -8,8 +8,12 @@ public class Main {
         Truck trackA = new Truck("КАМАЗ", "4565", 7.0, driverC);
         Bus busA = new Bus("МЕРС", "454", 4.0, driverD);
 
-        System.out.println(busA.getDriver());
-        System.out.println(driverD.getCar());
+        System.out.println(trackA.getType());
+        trackA.setCarrying(Truck.Carrying.N2);
+        trackA.printType();
+        busA.setCapacity(Bus.Capacity.SMALL);
+        busA.printType();
+
 
 
     }
