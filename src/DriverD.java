@@ -3,6 +3,7 @@ public class DriverD extends Driver<Bus> {
         super(fullname, driveLicense, driveExperience);
     }
 
+
     @Override
     public void startMoving() {
         System.out.printf("Водитель категории D: %s начал движение\n", getFullname());

@@ -13,7 +13,8 @@ public class Main {
         trackA.printType();
         busA.setCapacity(Bus.Capacity.SMALL);
         busA.printType();
-       carA.getDriver().setHasDriveLicense(false); // CantFindLicense: "У водителя отсутствуют водительские права!"
+       carA.getDriver().setHasDriveLicense(false);
+
         carA.goDiagnostic();
         trackA.goDiagnostic();
        busA.goDiagnostic();

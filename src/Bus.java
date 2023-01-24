@@ -37,6 +37,7 @@ public class Bus extends Transport<DriverD> {
         setType(TransportTypes.BUS);
     }
 
+
     @Override
     public void goDiagnostic() {
         try {

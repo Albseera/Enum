@@ -30,6 +30,7 @@ public class Car extends Transport<DriverB> {
         super(brand, model, engineVolume, driver);
         setType(TransportTypes.CAR);
     }
+
     @Override
     public void goDiagnostic() {
         try {

@@ -8,6 +8,7 @@ public class DriverC extends Driver<Truck> {
         System.out.printf("Водитель категории C: %s начал движение\n", getFullname());
     }
 
+
     @Override
     public void stopMoving() {
         System.out.printf("Водитель категории C: %s закончил движение\n", getFullname());

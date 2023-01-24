@@ -28,6 +28,7 @@ public abstract class Transport<D extends Driver> implements Competing {
 
     public abstract void goDiagnostic()  throws Exception;
 
+
     public void setBrand(String brand) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "default";
