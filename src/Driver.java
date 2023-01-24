@@ -2,16 +2,14 @@ import java.util.Objects;
 
 public abstract class Driver<T extends Transport> {
     private T car;
-    private double driveExperience;
     private final String fullname;
-    private boolean driveLicense;
+    private boolean hasDriveLicense;
+    private double driveExperience;
 
-
-    public Driver(String fullname, boolean driveLicense, double driveExperience) {
+    public Driver(String fullname, boolean hasDriveLicense, double driveExperience) {
         this.fullname = fullname;
+        this.hasDriveLicense = hasDriveLicense;
         this.driveExperience = driveExperience;
-        this.driveLicense = driveLicense;
-
     }
 
     public abstract void startMoving();
@@ -24,12 +22,12 @@ public abstract class Driver<T extends Transport> {
         return fullname;
     }
 
-    public boolean isDriveLicense() {
-        return driveLicense;
+    public boolean isHasDriveLicense() {
+        return hasDriveLicense;
     }
 
-    public void setDriveLicense(boolean driveLicense) {
-        this.driveLicense = driveLicense;
+    public void setHasDriveLicense(boolean hasDriveLicense) {
+        this.hasDriveLicense = hasDriveLicense;
     }
 
     public double getDriveExperience() {
@@ -49,14 +47,13 @@ public abstract class Driver<T extends Transport> {
     }
 
 
-
     @Override
     public int hashCode() {
-        return Objects.hash(fullname, driveLicense, driveExperience);
+        return Objects.hash(fullname, hasDriveLicense, driveExperience);
     }
 
     @Override
     public String toString() {
-        return fullname + " Права: " + (driveLicense ? "есть" : "нет") + " Стаж: " + driveExperience + " лет.";
+        return fullname + " Наличие прав: " + (hasDriveLicense ? "есть" : "нет") + " Стаж: " + driveExperience + " лет.";
     }
 }

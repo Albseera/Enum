@@ -31,7 +31,24 @@ public class Truck extends Transport<DriverC> {
         super(brand, model, engineVolume, driver);
         setType(TransportTypes.TRUCK);
     }
+    @Override
+    public void goDiagnostic() {
+        try {
+            if (!getDriver().isHasDriveLicense()){
+                throw new FindLicense("У водителя отсутствуют водительские права!");
+            }
+        } catch (FindLicense e) {
+            System.out.println(e.getMessage());
+        }
 
+        try {
+            if (getDriver().getClass() != DriverC.class){
+                throw new LicenseWrong("Невалидные права водителя!");
+            }
+        } catch (LicenseWrong e) {
+            System.out.println(e.getMessage());
+        }
+    }
     @Override
     public void printType() {
         if (carrying == null){

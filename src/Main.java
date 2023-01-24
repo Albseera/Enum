@@ -13,6 +13,10 @@ public class Main {
         trackA.printType();
         busA.setCapacity(Bus.Capacity.SMALL);
         busA.printType();
+       carA.getDriver().setHasDriveLicense(false); // CantFindLicense: "У водителя отсутствуют водительские права!"
+        carA.goDiagnostic();
+        trackA.goDiagnostic();
+       busA.goDiagnostic();
 
 
 
@@ -25,12 +29,5 @@ public class Main {
         }
     }
 
-    private static void printCheckinInformation(Transport<?>... transports) {
-        for (Transport<?> transport : transports) {
-            System.out.printf("Водитель: %s управляет автомобилем: %s %s %s и будет участвовать в заезде\n",
-                    transport.getDriver().getFullname(), transport.getClass().getSimpleName(), transport.getBrand(),
-                    transport.getModel());
-        }
-        System.out.println();
-    }
+
 }
