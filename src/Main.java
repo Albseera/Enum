@@ -14,10 +14,19 @@ public class Main {
         busA.setCapacity(Bus.Capacity.SMALL);
         busA.printType();
        carA.getDriver().setHasDriveLicense(false);
+       try {
+           carA.goDiagnostic();
+       }catch (FindLicense e){
+          e.printStackTrace();
+       }
 
-        carA.goDiagnostic();
-        trackA.goDiagnostic();
-       busA.goDiagnostic();
+
+
+
+
+//        carA.goDiagnostic();
+//        trackA.goDiagnostic();
+//       busA.goDiagnostic();
 
 
 

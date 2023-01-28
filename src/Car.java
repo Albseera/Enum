@@ -32,22 +32,14 @@ public class Car extends Transport<DriverB> {
     }
 
     @Override
-    public void goDiagnostic() {
-        try {
+    public void goDiagnostic() throws FindLicense{
+
             if (!getDriver().isHasDriveLicense()){
                 throw new FindLicense("У водителя отсутствуют водительские права!");
             }
-        } catch (FindLicense e) {
-            System.out.println(e.getMessage());
-        }
 
-        try {
-            if (getDriver().getClass() != DriverB.class){
-                throw new LicenseWrong("Невалидные  права водителя!");
-            }
-        } catch (LicenseWrong e) {
-            System.out.println(e.getMessage());
-        }
+
+
     }
 
 

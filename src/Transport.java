@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public abstract class Transport<D extends Driver> implements Competing {
     private D driver;
     private String brand;
